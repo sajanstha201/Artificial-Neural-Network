@@ -2,4 +2,7 @@ pandas
 numpy
 tensorflow
 matplotlib
+scikit-learn
+scipy
+dill
 -e .
