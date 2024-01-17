@@ -18,6 +18,37 @@ class data_transformationConfig:
 class data_transformation:
     def __init__(self):
         self.data_transformationConfig=data_transformationConfig()
+    def get_data_transformer(self):
+        try:
+            num_fcol=['PassengerId','Pclass','Age','SibSp','Parch','Fare']
+            cat_fcol=['Name','Sex','Ticket','Cabin','Embarked']
+            num_transformer=pipeline.Pipeline(
+                steps=[
+                    ("imputer",SimpleImputer(strategy="median")),
+                    ("scaler",StandardScaler())
+                ]
+            )
+            logging.info(f"Numerical column: {num_fcol}")
+            cat_transformer=pipeline.Pipeline(
+                steps=[
+                    ("imputer",SimpleImputer(strategy="most_frequent")),
+                    ("one_hot",OneHotEncoder())
+                ]
+            )
+            logging.info(f"Categorical column: {cat_fcol}")
+            Preprocessor=ColumnTransformer(
+                [
+                    ('num_col_tranformer',num_transformer,num_fcol),
+                    ('cat_col_tranformer',cat_transformer,cat_fcol)
+                ]
+            )
+            logging.info("preprocessor making is completed")
+            return Preprocessor
+        except Exception as e:
+            logging.info(e)
+            raise customException(e,sys)
+        
+
     def data_transformation_initiate(self,train_path,test_path,test_result_path):
         try:
             logging.info("data transformation initiate")
@@ -55,43 +86,14 @@ class data_transformation:
                 )
             logging.info("successfully save the object in preprocessor.pkl file")
             return(
-                train_arr,
-                test_arr,
+                train_arr.toarray(),
+                test_arr.toarray(),
                 self.data_transformationConfig.preprocessor_path
             )
         except Exception as e:
             logging.info(e)
             raise customException(e,sys)  
-    def get_data_transformer(self):
-        try:
-            num_fcol=['PassengerId','Pclass','Age','SibSp','Parch','Fare']
-            cat_fcol=['Name','Sex','Ticket','Cabin','Embarked']
-            num_transformer=pipeline.Pipeline(
-                steps=[
-                    ("imputer",SimpleImputer(strategy="median")),
-                    ("scaler",StandardScaler())
-                ]
-            )
-            logging.info(f"Numerical column: {num_fcol}")
-            cat_transformer=pipeline.Pipeline(
-                steps=[
-                    ("imputer",SimpleImputer(strategy="most_frequent")),
-                    ("one_hot",OneHotEncoder())
-                ]
-            )
-            logging.info(f"Categorical column: {cat_fcol}")
-            Preprocessor=ColumnTransformer(
-                [
-                    ('num_col_tranformer',num_transformer,num_fcol),
-                    ('cat_col_tranformer',cat_transformer,cat_fcol)
-                ]
-            )
-            logging.info("preprocessor making is completed")
-        except Exception as e:
-            logging.info(e)
-            raise customException(e,sys)
-        return Preprocessor
-
+    
 
 
 if __name__=="__main__":
