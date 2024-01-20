@@ -19,7 +19,7 @@ class data_transformation:
         self.data_transformationConfig=data_transformationConfig()
     def get_data_transformer(self):
         try:
-            num_fcol=['Pclass','Age','SibSp','Parch','Fare']
+            num_fcol=['Pclass','Age','SibSp','Parch']
             cat_fcol=['Sex','Embarked']
             num_transformer=pipeline.Pipeline(
                 steps=[

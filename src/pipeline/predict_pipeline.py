@@ -12,7 +12,6 @@ def get_data_frame(dict):
             'Age':[int(dict['Age'])],
             'SibSp':[int(dict['spouses'])+int(dict['Sibling'])],
             'Parch':[int(dict['parent'])],
-            'Fare':[int(dict['Fare'])],
             'Sex':[dict['Sex']],
             'Embarked':[dict['Embarked']]
     }
@@ -22,8 +21,8 @@ def get_data_frame(dict):
 def prediction(dict):
     try:
         data=get_data_frame(dict)
-        model_path="/Users/sajanshrestha/Data Science/Project/Titanic/artifacts/model.pkl"
-        transformer_path="/Users/sajanshrestha/Data Science/Project/Titanic/artifacts/preprocessor.pkl"
+        model_path="artifacts/model.pkl"
+        transformer_path="artifacts/preprocessor.pkl"
         model=load_file(model_path)
         transformer=load_file(transformer_path)
         transformed_data=transformer.transform(data)
@@ -33,8 +32,8 @@ def prediction(dict):
         logging.info(e)
         raise customException(e,sys)
 if __name__=="__main__":
-        model_path="/Users/sajanshrestha/Data Science/Project/Titanic/artifacts/model.pkl"
-        transformer_path="/Users/sajanshrestha/Data Science/Project/Titanic/artifacts/preprocessor.pkl"
+        model_path="artifacts/model.pkl"
+        transformer_path="artifacts/preprocessor.pkl"
         model=load_file(model_path)
         transformer=load_file(transformer_path)
         data={
@@ -42,7 +41,6 @@ if __name__=="__main__":
             'Age':[25],
             'SibSp':[0],
             'Parch':[0],
-            'Fare':[0],
             'Sex':['male'],
             'Embarked':['S']
     }

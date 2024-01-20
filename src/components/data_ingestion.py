@@ -16,11 +16,11 @@ class data_ingestion:
         logging.info("Data ingestion process initiated.")
         try:
             train_data=pd.read_csv('/Users/sajanshrestha/Data Science/Project/Titanic/NoteBook/train.csv')
-            train_data=train_data.drop(columns=['Name','Ticket','Cabin','PassengerId'])
+            train_data=train_data.drop(columns=['Name','Ticket','Cabin','PassengerId','Fare'])
             logging.info("completed reading the training dataset from source")
             
             test_data=pd.read_csv('/Users/sajanshrestha/Data Science/Project/Titanic/NoteBook/test.csv')
-            test_data=test_data.drop(columns=['Name','Ticket','Cabin','PassengerId'])
+            test_data=test_data.drop(columns=['Name','Ticket','Cabin','PassengerId','Fare'])
             logging.info("completed reading the testing datset from source")
             
             test_result_data=pd.read_csv('/Users/sajanshrestha/Data Science/Project/Titanic/NoteBook/test_result.csv')
