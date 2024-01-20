@@ -42,7 +42,6 @@ this folder contains all the logging information that your have logged duirng ex
 
 ->src\
     this folder contains all the files that are required for our model to train\
-
     ->components\
         ->data_ingestion.py\
             ->data_ingestionConfig() method contains the path of train and test dataset\
