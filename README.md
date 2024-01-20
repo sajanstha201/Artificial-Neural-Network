@@ -42,6 +42,7 @@ this folder contains all the logging information that your have logged duirng ex
 
 ->src\
     this folder contains all the files that are required for our model to train\
+
     ->components\
         ->data_ingestion.py\
             ->data_ingestionConfig() method contains the path of train and test dataset\
@@ -52,15 +53,20 @@ this folder contains all the logging information that your have logged duirng ex
         ->model_trainer.py\
             ->model_trainerConfig() method have the path to store the trained model\
             ->model_trainer_initate() method will train our model and it will save trained model into artifacts folder as model.pkl file\
+
     ->pipeline\
         ->predict_pipeline\
             ->prediction() method will predict person who gave his/her data would survive or not if he was in the titanic event\
+
     ->__init__.py\
         this file is empty file but this file is used to represent that its parent folder can be used as a module \
+
     ->exception.py\
         I have created a customException which will print the filename, lineno and message of exception if any error occurs during the execution\
+
     ->logger.py\
         This file contains the logging basic Configuration about how to store the log information in log folder\
+
     ->utils.py\
         this file is used to store such a method that is being used in most of the case during the execution of my project.\
 
@@ -76,11 +82,14 @@ this folder contains all the logging information that your have logged duirng ex
             this file contains the structure of our table that we have to make\
         ->views.py\
             this file handel the HTTP request\
+
     ->website\
         ->urls.py\
             this file contain the url of each method defined in views.py\
+
     ->db.sqlite3\
         it is the database of our project\
+        
     ->manage.py\
         this file contains all the information about commands that we write in terminal like makemigrations, migrates ,runserver etc\
 
