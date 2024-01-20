@@ -5,5 +5,7 @@ def home(request):
     if(request.method=='POST'):
         data=request.POST
         pred=prediction(data)
+        print("sajan shrestha",pred)
+        pred=100
         return redirect('/titanic/')
     return render(request,'index.html',{'living_percentage':pred})

@@ -28,7 +28,25 @@ def prediction(dict):
         transformer=load_file(transformer_path)
         transformed_data=transformer.transform(data)
         prediction=model.predict(transformed_data)
-        return prediction[0]
+        return int(prediction[0])
     except Exception as e:
         logging.info(e)
         raise customException(e,sys)
+if __name__=="__main__":
+        model_path="/Users/sajanshrestha/Data Science/Project/Titanic/artifacts/model.pkl"
+        transformer_path="/Users/sajanshrestha/Data Science/Project/Titanic/artifacts/preprocessor.pkl"
+        model=load_file(model_path)
+        transformer=load_file(transformer_path)
+        data={
+            'Pclass':[1],
+            'Age':[25],
+            'SibSp':[0],
+            'Parch':[0],
+            'Fare':[0],
+            'Sex':['male'],
+            'Embarked':['S']
+    }
+        dataframe=pd.DataFrame(data)
+        transformed_data=transformer.transform(dataframe)
+        prediction=model.predict(transformed_data)
+        print(int(prediction[0]))
