@@ -15,13 +15,15 @@ class data_ingestion:
     def data_ingestion_initiate(self):
         logging.info("Data ingestion process initiated.")
         try:
-            train_data=pd.read_csv('/Users/sajanshrestha/Data Science/Neural_Network/NoteBook/train.csv')
+            train_data=pd.read_csv('/Users/sajanshrestha/Data Science/Project/Titanic/NoteBook/train.csv')
+            train_data=train_data.drop(columns=['Name','Ticket','Cabin','PassengerId'])
             logging.info("completed reading the training dataset from source")
             
-            test_data=pd.read_csv('/Users/sajanshrestha/Data Science/Neural_Network/NoteBook/test.csv')
+            test_data=pd.read_csv('/Users/sajanshrestha/Data Science/Project/Titanic/NoteBook/test.csv')
+            test_data=test_data.drop(columns=['Name','Ticket','Cabin','PassengerId'])
             logging.info("completed reading the testing datset from source")
             
-            test_result_data=pd.read_csv('/Users/sajanshrestha/Data Science/Neural_Network/NoteBook/test_result.csv')
+            test_result_data=pd.read_csv('/Users/sajanshrestha/Data Science/Project/Titanic/NoteBook/test_result.csv')
             logging.info("completed reading the test result dataset from source")
             
             os.makedirs(os.path.dirname(self.data_ingestionConfig.train_data_path),exist_ok=True)

@@ -10,7 +10,6 @@ from sklearn.impute import SimpleImputer
 from src.exception import customException
 from src.logger import logging
 from src.components.data_ingestion import data_ingestion
-from scipy.sparse import csr_matrix,hstack,vstack
 from src.utils import save_obj
 class data_transformationConfig:
     def __init__(self):
@@ -20,8 +19,8 @@ class data_transformation:
         self.data_transformationConfig=data_transformationConfig()
     def get_data_transformer(self):
         try:
-            num_fcol=['PassengerId','Pclass','Age','SibSp','Parch','Fare']
-            cat_fcol=['Name','Sex','Ticket','Cabin','Embarked']
+            num_fcol=['Pclass','Age','SibSp','Parch','Fare']
+            cat_fcol=['Sex','Embarked']
             num_transformer=pipeline.Pipeline(
                 steps=[
                     ("imputer",SimpleImputer(strategy="median")),
@@ -63,12 +62,7 @@ class data_transformation:
             input_feature_train_data=train_data.drop(columns=[target_feature],axis=1)
             logging.info("target result is seperated form the training dataset")
 
-            
-            input_feature_all=pd.concat([input_feature_train_data,test_data],axis=0)
-            logging.info("input feature of training and testing dataset is merged for transformer")
-
-
-            preprocessor.fit(input_feature_all)
+            preprocessor.fit(input_feature_train_data)
             logging.info("successfully fit the merged input feature")
             
             input_feature_train_arr=preprocessor.transform(input_feature_train_data)
@@ -76,8 +70,8 @@ class data_transformation:
             input_feature_test_arr=preprocessor.transform(test_data)
             logging.info("successfully transformed the testing dataset")
 
-            train_arr=hstack([input_feature_train_arr,np.array(target_feature_train_data).reshape(-1,1)])
-            test_arr=hstack([input_feature_test_arr,np.array(test_result_data).reshape(-1,1)])
+            train_arr=np.concatenate((input_feature_train_arr,np.array(target_feature_train_data).reshape(-1,1)),axis=1)
+            test_arr=np.concatenate((input_feature_test_arr,np.array(test_result_data).reshape(-1,1)),axis=1)
             logging.info("concatenated the input feature and target feature for both training and testing dataset")
 
             save_obj(
@@ -86,8 +80,8 @@ class data_transformation:
                 )
             logging.info("successfully save the object in preprocessor.pkl file")
             return(
-                train_arr.toarray(),
-                test_arr.toarray(),
+                train_arr,
+                test_arr,
                 self.data_transformationConfig.preprocessor_path
             )
         except Exception as e:

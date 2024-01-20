@@ -9,7 +9,7 @@ def get_requirements(file_path:str)->str:
     return requirements
 
 setup(
-    name='neural_network_project',
+    name='titanic_project',
     version='0.0.1',
     author='sajan_shrestha',
     author_email='sajanstha201.55@gmail.com',

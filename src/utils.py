@@ -31,4 +31,11 @@ def model_evaluate(x_train,y_train,x_test,y_test,models,params):
     except Exception as e:
         logging.info(e)
         raise customException(e,sys)
-        
+def load_file(path):
+    try:
+        with open(path,'rb') as file:
+            loaded_file=dill.load(file)
+        return loaded_file
+    except Exception as e:
+        logging.info(e)
+        raise customException(e,sys)

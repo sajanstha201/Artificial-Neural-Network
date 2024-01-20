@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>TITANIC</title>
+
+    </head>
+    <body>
+        <div style="text-align:center">
+            <form method='POST'>
+                {% csrf_token %}
+            <h1>TITANIC</h1>
+            <span >Select ship class: </span>
+            <select  name="Pclass">
+                <option value="1">First Class</option>
+                <option value="2">Second Class</option>
+                <option value="3">Third Class</option>
+            </select>
+            <br><br>
+            <span>Enter your name: </span>
+            <input name="Name" style="dispaly:inline-block;width:200px;height:20px"></input>
+            <br><br>
+            <span>Sex: </span>
+            <label><input type="radio" value="male" name="Sex">Male</label>
+            <label><input type="radio" value="female" name="Sex">Female</label>
+            <br><br>
+            <span>Age: </span>
+            <input name="Age" style="width:50px;height:20px">
+            <br><br>
+            <span>Is your wife/husband with you?</span>
+            <label><input type="radio" value="1" name="spouses">YES</label>
+            <label><input type="radio" value="0" name="spouses">NO</label>
+            <br><br>
+            <span>Total Number of Siblings</span>
+            <input name="Sibling" style="width:50px;height:20px">
+            <br><br>
+            <span>Is your ancestor is with you? If yes, how many?</span>
+            <input name="parent" style="width:50px;height:20px">
+            <br><br>
+            <span>Enter Ticket Number: </span>
+            <input name="Ticket" style="width:50px;height:20px">
+            <br><br>
+            <span>Enter Fare</span>
+            <input name="Fare" style="width:50px;height:20px">
+            <br><br>
+            <span>Enter Cabin Number: </span>
+            <input name="Cabin" style="width:50px;height:20px">
+            <br><br>
+            <span>Where Are You Going?</span>
+            <label> <input value="S" type="radio" name="Embarked"> Southampton</input></label>
+            <label> <input value="C" type="radio" name="Embarked"> Cherbourg</input></label>
+            <label> <input value="Q" type="radio" name="Embarked">Queenstown</input></label>
+            <br><br>
+            <button type="submit" onclick="display()" style="height:30px">CLICK ME TO FIND RESULT</button>
+            <br><br>
+        </form>
+        <p style="" id="living_percentage">Your living percentage is :{{living_percentage}}</p>
+            
+        </div>
+    </body>
+</html>
