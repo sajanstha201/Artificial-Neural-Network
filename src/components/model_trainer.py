@@ -37,36 +37,36 @@ class model_trainer:
             }
             logging.info("loaded the required model")
             params={
-                    "Logistic Regression":{
+                "Logistic Regression":{
                     #'estimator':['C','class_weight','dual','n_jobs'],
-                    'C':[0.1,1,10],
+                    'C':[1,2],
                     #'solver':['lbfgs','liblinear','sag','saga'],
-                   'max_iter':[100,500,1000,50000]
+                   #'max_iter':[100,500,1000,5000]
                     },
-                    "SVM":{
+                "SVM":{
                     #'estimator':['C','break_ties','cache_size','gamma','kernel']
                     #'C':[0.01,0.1,1,10,10,100],
-                    'kernel':['linear','rbf','poly','sigmoid'],
-                    'gamma':[0.01,0.1,1,10,100],
+                    'kernel':['linear','poly'],
+                    'gamma':[1,2],
                     #'degree':[2,3,4,5]
                     },
                 "Naive Bayes":{
                    # 'estimator':['priors','var_smoothing'],
-                    'alpha':[0.001,0.01,0.1,1,10,100]
+                    #'alpha':[1,2]
                     },
                 "KNN":{
-                    #'n_neighbors':[5,6,7,8],
+                    'n_neighbors':[5,6],
                     #'metric':['euclidean','manhattan','minkowski'],
                     #'algorithm':['auto','ball_tree','kd_tree'],
                     #'leaf_size':[10,20]
                     },
                 "K Mean":{
-                   # 'n_init':['auto']
+                    'n_init':['auto'],
                     #'n_clusters':[2,3,4,5,6,7],
-                    #'max_iter':[100,200,300],
+                    'max_iter':[100,200,300]
                     },
                 "Decision Tree":{
-                    'criterion':['gini','entropy','squared_error','absolute_error','poisson'],
+                    'criterion':['gini','entropy'],
                     #'splitter':['random','best'],
                     #'max_depth':[100,200,300],
                     #'min_samples_split':[1,2,3,4,5],
@@ -76,7 +76,7 @@ class model_trainer:
                 "Random Forest":{
                     #'criterion':['gini','entropy','squared_error','absolute_error','poisson'],
                     #'splitter':['random','best'],
-                    'n_estimators': [8,16,32,64,128,256]
+                    'n_estimators': [8,16,32]
                 }
             }
             logging.info("declared the hyperparameter for each model")
