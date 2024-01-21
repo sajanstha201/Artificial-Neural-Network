@@ -45,7 +45,7 @@ this folder contains the training and testing data which is used into out model.
 **->logs**
 this folder contains all the logging information that your have logged duirng execution of my project
 
-->src\
+****->src\****
     this folder contains all the files that are required for our model to train\
     ->components\
         ->data_ingestion.py\
