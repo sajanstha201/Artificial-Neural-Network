@@ -39,16 +39,16 @@ I have created a website using django framework which will take the necessary in
 
 **Description of each file and folder:**
 
-**->artifacts**
+**1.artifacts**\
 this folder contains the training and testing data which is used into out model.In addition , this folder contains the pkl file like preprocessor and pre trained model.
 
-**->logs**
+**2.logs**\
 this folder contains all the logging information that your have logged duirng execution of my project
 
-**->src\**
+**3.src**\
     this folder contains all the files that are required for our model to train\
-    \t->components\
-       \t\t->data_ingestion.py\
+    ->components\
+       ->data_ingestion.py\
             ->data_ingestionConfig() method contains the path of train and test dataset\
             ->data_ingestion_initate() method will load the train and test data from the source and store it into the aritfacts folder\
         ->data_transformation.py\
@@ -70,7 +70,7 @@ this folder contains all the logging information that your have logged duirng ex
         this file is used to store such a method that is being used in most of the case during the execution of my project.\
 
 
-->website\
+**4.website**\
     ->this is a django project that contain a app name 'app' which contain all the information about the frontend of the website.\
     ->app\
         ->migration\
@@ -89,14 +89,14 @@ this folder contains all the logging information that your have logged duirng ex
     ->manage.py\
         this file contains all the information about commands that we write in terminal like makemigrations, migrates ,runserver etc\
 
-->.gitignore\
+**5.gitignore**\
 this file contains the extension of such file which we dont want to push to our github\
 
-->requirements.txt\
+**6.requirements.txt**\
 this file contains the required python library for our project.
 For example: tensorflow, matplotlib, numpy, pandas, keras, django etc.\
 
 
-->setup.py\
+**7.setup.py**\
 this file is used to setup our src file and it help to convert our src file to python module so that we can use it for other work.\
 
