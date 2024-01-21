@@ -11,6 +11,7 @@ Python Library that are used in this project:
 ->django
 
 **Detail Explanation of running this project**
+
 1.pull this repository using 
 
 git pull https://github.com/sajanstha201/Titanic-Machine-Learning-from-Disaster.git
