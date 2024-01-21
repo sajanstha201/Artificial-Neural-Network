@@ -1,14 +1,23 @@
 Titanic Machine Learning from Disaster
 
 **A.Python Library that are used in this project:**
+
 ->Numpy
+
 ->Pandas
+
 ->Tensorflow
+
 ->matplotlib
+
 ->scikit-learn
+
 ->scipy
+
 ->dill
+
 ->django
+
 
 **B.Detail Explanation of running this project**
 
