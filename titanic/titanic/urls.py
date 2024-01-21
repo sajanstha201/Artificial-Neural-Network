@@ -19,6 +19,5 @@ from django.urls import path
 from app.views import home
 urlpatterns = [
     path('',home),
-    path('titanic/',home),
     path('admin/', admin.site.urls),
 ]
