@@ -16,15 +16,16 @@ Python Library that are used in this project:
 git pull https://github.com/sajanstha201/Titanic-Machine-Learning-from-Disaster.git
 
 2.open this repository and from that open your terminal
+
 3.write the following command to create a virtual environment for this app
 
 python3.8 -m venv myenv
 
-On windows:\
+On windows:
 
 myenv\Scripts\activate
 
-On Mac:\
+On Mac:
 
 source myenv/bin/activate
 
@@ -37,6 +38,7 @@ pip install -r requirements.txt
 python manage.py runserver
 
 6.copy the url (http://127.0.0.1:8000/) and search in your searchengine
+
 7.you will get my app
 
 **Details things that I have done during this project**
