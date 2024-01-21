@@ -45,10 +45,10 @@ this folder contains the training and testing data which is used into out model.
 **->logs**
 this folder contains all the logging information that your have logged duirng execution of my project
 
-****->src\****
+**->src\**
     this folder contains all the files that are required for our model to train\
-    ->components\
-        ->data_ingestion.py\
+    \t->components\
+       \t\t->data_ingestion.py\
             ->data_ingestionConfig() method contains the path of train and test dataset\
             ->data_ingestion_initate() method will load the train and test data from the source and store it into the aritfacts folder\
         ->data_transformation.py\
