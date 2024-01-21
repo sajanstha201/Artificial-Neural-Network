@@ -1,6 +1,6 @@
-Titanic 
+Titanic Machine Learning from Disaster
 
-Python Library that are used in this project:
+**A.Python Library that are used in this project:**
 ->Numpy
 ->Pandas
 ->Tensorflow
@@ -10,7 +10,7 @@ Python Library that are used in this project:
 ->dill
 ->django
 
-**Detail Explanation of running this project**
+**B.Detail Explanation of running this project**
 
 1.pull this repository using 
 
@@ -42,10 +42,8 @@ python manage.py runserver
 
 7.you will get my app
 
-**Details things that I have done during this project**
+**C.Details things that I have done during this project**
 
-
-METHODOLOGYS
 
 **1.Problem Statement**
 
@@ -77,7 +75,7 @@ Using hyperparametr concept the best model is found using sklearn.model_selectio
 
 I have created a website using django framework which will take the necessary inputs for our model and it will pass those details into prediciton pipelines so that it can predict the living chance of that person by loading model.pkl and preprocessor.pkl file from artifacts folder.
 
-**Description of each file and folder:**
+**D.Description of each file and folder:**
 
 **1.artifacts**\
 this folder contains the training and testing data which is used into out model.In addition , this folder contains the pkl file like preprocessor and pre trained model.
