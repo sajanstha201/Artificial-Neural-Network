@@ -8,6 +8,7 @@
             <form method='POST'>
                 {% csrf_token %}
             <h1>TITANIC</h1>
+            <h4>Enter following data to check whether you will survive in titanic event or not</h4>
             <span >Select ship class: </span>
             <select  name="Pclass">
                 <option value="1">First Class</option>
@@ -56,9 +57,9 @@
         </form>
         {%if living_percentage is not None%}
             {%if living_percentage == 1%}
-                <p style="" id="living_percentage">You would be alive</p>
+                <p style="" id="living_percentage">SURVIVE</p>
             {%else%}
-            <p>You would be dead</p>
+            <p>DEAD</p>
             {%endif%}
         {% endif%}
         </div>
