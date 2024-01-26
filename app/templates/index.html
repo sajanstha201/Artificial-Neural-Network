@@ -7,7 +7,7 @@
         <div style="text-align:center">
             <form method='POST'>
                 {% csrf_token %}
-            <h1>TITANIC</h1>
+            <h1>SURVIVAL PREDICTION</h1>
             <h4>Enter following data to check whether you will survive in titanic event or not</h4>
             <span >Select ship class: </span>
             <select  name="Pclass">
@@ -33,7 +33,7 @@
             <span>Total Number of Siblings</span>
             <input name="Sibling" style="width:50px;height:20px">
             <br><br>
-            <span>Is your ancestor is with you? If yes, how many?</span>
+            <span>Are there any parents/Guardians that are travelling with you? If yes please enter the number If None, please enter '0'</span>
             <input name="parent" style="width:50px;height:20px">
             <br><br>
             <!--
