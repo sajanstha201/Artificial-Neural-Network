@@ -6,4 +6,4 @@ scikit-learn
 scipy
 dill
 django
-django-heroku
+django-herokua
