@@ -1,0 +1,1 @@
+web gunicorn titanic.wsgi:application --log-file -

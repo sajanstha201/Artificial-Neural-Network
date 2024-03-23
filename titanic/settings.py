@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure--b5a2vm8l9z_%!=3&gu41chxr*4b9=8noldledxvti&&&0#28l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'titanic'
 ]
 
 MIDDLEWARE = [
