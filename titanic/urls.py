@@ -20,6 +20,6 @@ from app.views import home
 from .views import sajan
 urlpatterns = [
     path('',home),
-    path('sajan/',sajan),
+    path('/sajan/',sajan),
     path('admin/', admin.site.urls),
 ]
